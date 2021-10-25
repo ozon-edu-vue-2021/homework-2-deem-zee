@@ -1,17 +1,25 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <TreeStructure
+      :node="node_modules"
+    />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import TreeStructure from './components/TreeStructure.vue';
+import node_modules from '../public/static/node_modules.json';
 
 export default {
-  name: 'App',
+  name: 'app',
+  data() {
+    return {
+      node_modules,
+    }
+  },
   components: {
-    HelloWorld
+    TreeStructure
   }
 }
 </script>
@@ -22,7 +30,8 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #0980f7;
   margin-top: 60px;
 }
+
 </style>
