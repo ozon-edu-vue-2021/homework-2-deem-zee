@@ -6,7 +6,8 @@
         :style="{'margin-left': `${depth * 20}px`}"
         class="node">
         <span v-if="hasChildren && node.type == 'directory'"
-        class="type">{{expanded ?  '&#128193;' : '&#128194;'}}</span>
+        class="type"
+        :style="{'cursor' : 'pointer'}">{{expanded ?  '&#128194;' : '&#128193;'}}</span>
         <span v-else-if="!hasChildren  && node.type == 'file'">{{'&#128196;'}}</span>
         <span v-else>{{'&#128279;'}}</span>
         
