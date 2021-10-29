@@ -13,13 +13,15 @@
         
         <span>{{node.name}}</span>
     </div>
-    <TreeStructure 
+    <div  v-if="expanded">
+      <TreeStructure 
         v-for="child in node.contents"
-        v-if="expanded"
         :key="child.name"
         :node="child"
         :depth="depth + 1" 
-    />
+    />  
+    </div>
+    
 </div>
 </template>
 
