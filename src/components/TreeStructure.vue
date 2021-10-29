@@ -7,11 +7,9 @@
         class="node">
         <span v-if="hasChildren && node.type == 'directory'"
         class="type"
-        :style="{'cursor' : 'pointer'}">{{expanded ?  '&#128194;' : '&#128193;'}}</span>
-        <span v-else-if="!hasChildren  && node.type == 'file'">{{'&#128196;'}}</span>
-        <span v-else>{{'&#128279;'}}</span>
-        
-        <span>{{node.name}}</span>
+        :style="{'cursor' : 'pointer'}">{{expanded ?  '&#128194;' : '&#128193;'}}{{node.name}}</span>
+        <span v-else-if="!hasChildren  && node.type == 'file'">{{'&#128196;'}}{{node.name}}</span>
+        <span v-else>{{'&#128279;'}}{{node.name}}</span>
     </div>
     <div  v-if="expanded">
       <TreeStructure 
